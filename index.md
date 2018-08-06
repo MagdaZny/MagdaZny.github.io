@@ -28,6 +28,9 @@ JSON (JavaScript Object Notation) evolved to be independent from JavaScript.  It
 There's two parts of the language: the Data Definition Language (DDL) and Data Manipulation (DML). DDL is responsible for creating/droping tables when DML helps to manipulate (insert, update, delete) and query (select) database.h
 
 Example queries:
+combining two relations
+``` 
+SELECT distinct student.id, name, score FROM student, class WHERE student.id = class.id AND sex = 'Female' ORDER BY score DESC name; 
 ```
-select id, name from student, class where student.id = class.id
-```
+'no need to add prefixes to _distinct_ and _id_ if the atributes are unique;
+attributes after DESC are to indicate how should the records be ordered in next steps'
