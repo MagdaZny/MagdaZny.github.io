@@ -9,15 +9,10 @@ XML (Extensible Markup Language) is a standard for data representation and excha
 - flexible, "self-describing" schema
 
 Except a proper form of XML (single root, proper nestind, unique attibutes) we talk also about XML validation, that is being ensured by DTD (Document Type Descriptor) or XML Schema. 
-**DTD** is a grammar like language for specifying elements, attributes, nesting, ordering etc.  
-Cons of using DTD:
-- programs can assume structure
-- it is a specification, documentation
-~ analogy to "typing"
 
-On the other hand it prevents
-- flexibily, ease of change
-~ analogy to no "typing"
+**DTD** is a grammar like language for specifying elements, attributes, nesting, ordering etc.  
+The main benefits of DTD are that programs can assume a structure and it provides a specification, documentation.
+On the other hand it limits flexibily and ease of change.
 
 ## JSON
 JSON (JavaScript Object Notation) evolved to be independent from JavaScript.  It's newer than XML, thus there aren't that many tools for JSON as we have for XML.
@@ -26,3 +21,13 @@ JSON (JavaScript Object Notation) evolved to be independent from JavaScript.  It
 * useful for representing & storing semistructured data
 * parser for many languages
 
+## SQL
+- declarative language, 
+- queries are optimised with a query optimiser
+
+There's two parts of the language: the Data Definition Language (DDL) and Data Manipulation (DML). DDL is responsible for creating/droping tables when DML helps to manipulate (insert, update, delete) and query (select) database.h
+
+Example queries:
+```
+select id, name from student, class where student.id = class.id
+```
