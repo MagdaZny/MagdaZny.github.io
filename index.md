@@ -30,7 +30,10 @@ There's two parts of the language: the Data Definition Language (DDL) and Data M
 Example queries:
 combining two relations
 ``` sql
-SELECT distinct student.id, name, score FROM student, class WHERE student.id = class.id AND sex = 'Female' ORDER BY score DESC name; 
+SELECT distinct s.id, name, score 
+FROM student s, class c 
+WHERE s.id = c.id AND sex = 'Female' 
+ORDER BY score DESC name; 
 ```
 > no need to add prefixes to _distinct_ and _id_ if the atributes are unique
 
@@ -38,5 +41,39 @@ SELECT distinct student.id, name, score FROM student, class WHERE student.id = c
 
 
 ``` sql
-SELECT name, score/100.0 FROM student WHERE name LIKE '%Sam%'; 
+SELECT name, score/100.0 
+FROM student 
+WHERE name LIKE '%Sam%'; 
 ```
+
+``` sql
+SELECT name FROM professors
+UNION
+SELECT name FROM professors
+(ORDER BY name);
+```
+> returns unique record
+
+> `UNION ALL` returns duplicats
+
+``` sql
+SELECT id FROM professors WHERE number_of_publications > 4
+INTERSECT (EXCEPT)
+SELECT id FROM professors WHERE branch = 'London';
+```
+> returns records meeting both (first but not second) conditions
+
+### subqueries
+``` sql
+SELECT id, name
+FROM student
+WHERE id IN (
+  SELECT id
+  FROM university
+  WHERE branch = 'London')
+AND NOT IN (
+  SELECT id
+  FROM university
+  WHERE branch = 'Edynburg');
+  ```
+  > using subqueries helps us to avoid duplicats 
