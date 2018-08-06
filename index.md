@@ -9,8 +9,8 @@ XML (Extensible Markup Language) is a standard for data representation and excha
 - flexible, "self-describing" schema
 
 Except a proper form of XML (single root, proper nestind, unique attibutes) we talk also about XML validation, that is being ensured by DTD (Document Type Descriptor) or XML Schema. 
-### DTD 
-DTD is a grammar like language for specifying elements, attributes, nesting, ordering etc.  Cons of using DTD 
+**DTD** is a grammar like language for specifying elements, attributes, nesting, ordering etc.  
+Cons of using DTD:
 - programs can assume structure
 - it is a specification, documentation
 ~ analogy to "typing"
