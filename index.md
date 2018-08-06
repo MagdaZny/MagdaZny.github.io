@@ -33,4 +33,10 @@ combining two relations
 SELECT distinct student.id, name, score FROM student, class WHERE student.id = class.id AND sex = 'Female' ORDER BY score DESC name; 
 ```
 > no need to add prefixes to _distinct_ and _id_ if the atributes are unique
+
 > attributes after DESC are to indicate how should the records be ordered in next steps
+
+
+``` sql
+SELECT name, score/100.0 FROM student WHERE name LIKE '%Sam%'; 
+```
