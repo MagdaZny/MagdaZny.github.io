@@ -29,8 +29,8 @@ There's two parts of the language: the Data Definition Language (DDL) and Data M
 
 Example queries:
 combining two relations
-``` 
+``` sql
 SELECT distinct student.id, name, score FROM student, class WHERE student.id = class.id AND sex = 'Female' ORDER BY score DESC name; 
 ```
-'no need to add prefixes to _distinct_ and _id_ if the atributes are unique;
-attributes after DESC are to indicate how should the records be ordered in next steps'
+> no need to add prefixes to _distinct_ and _id_ if the atributes are unique
+> attributes after DESC are to indicate how should the records be ordered in next steps
