@@ -52,18 +52,18 @@ UNION
 SELECT name FROM professors
 (ORDER BY name);
 ```
-> returns unique record
+returns unique record
 
-> `UNION ALL` returns duplicats
+`UNION ALL` returns duplicates
 
 ``` sql
 SELECT id FROM professors WHERE number_of_publications > 4
 INTERSECT (EXCEPT)
 SELECT id FROM professors WHERE branch = 'London';
 ```
-> returns records meeting both (first but not second) conditions
+returns records meeting both (first but not second) conditions
 
-### subqueries
+### subqueries in WHERE
 ``` sql
 SELECT id, name
 FROM student
@@ -76,4 +76,4 @@ AND NOT IN (
   FROM university
   WHERE branch = 'Edynburg');
   ```
-  > using subqueries helps us to avoid duplicats 
+  using subqueries helps us to avoid duplicates
